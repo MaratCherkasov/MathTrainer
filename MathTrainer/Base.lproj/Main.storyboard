@@ -233,15 +233,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ys1-Bg-fh9">
-                                <rect key="frame" x="39.999999999999993" y="84" width="73.333333333333314" height="33.333333333333343"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="30" y="84" width="73" height="33"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="73" id="V4b-Rn-2hU"/>
+                                    <constraint firstAttribute="height" constant="33" id="mtm-3F-pYR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="tintColor" systemColor="systemGray3Color"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Назад">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Назад">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="IIf-bl-ZHi" kind="unwind" unwindAction="unwindActionWithUnwindSegue:" id="Qxt-yR-umx"/>
                                 </connections>
@@ -256,7 +259,7 @@
                                 <rect key="frame" x="96.666666666666686" y="505.66666666666674" width="80" height="80"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="Onf-JA-iJy"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="Onf-JA-iJy"/>
                                     <constraint firstAttribute="height" constant="80" id="RGz-Kh-r9y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
@@ -276,7 +279,7 @@
                                 <rect key="frame" x="216.66666666666663" y="505.66666666666674" width="80" height="80"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="jjo-qE-lT1"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="jjo-qE-lT1"/>
                                     <constraint firstAttribute="height" constant="80" id="vbt-q2-Hte"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
@@ -293,13 +296,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q6H-VH-9nM">
-                                <rect key="frame" x="300" y="90" width="50" height="50"/>
+                                <rect key="frame" x="314" y="84" width="85" height="33"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="ffu-Dc-aek"/>
-                                    <constraint firstAttribute="width" constant="50" id="oSS-Nh-XlS"/>
+                                    <constraint firstAttribute="height" constant="33" id="ffu-Dc-aek"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="oSS-Nh-XlS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -309,12 +312,12 @@
                         <color key="tintColor" systemColor="systemBlueColor"/>
                         <constraints>
                             <constraint firstItem="dac-sl-ftc" firstAttribute="centerY" secondItem="RQ1-r8-vxg" secondAttribute="centerY" constant="-30" id="3RR-Wa-fvt"/>
-                            <constraint firstItem="FQa-Z0-uVD" firstAttribute="trailing" secondItem="q6H-VH-9nM" secondAttribute="trailing" constant="43" id="D1B-vw-INS"/>
-                            <constraint firstItem="q6H-VH-9nM" firstAttribute="top" secondItem="FQa-Z0-uVD" secondAttribute="top" constant="31" id="DTH-IC-LUO"/>
+                            <constraint firstItem="FQa-Z0-uVD" firstAttribute="trailing" secondItem="q6H-VH-9nM" secondAttribute="trailing" constant="-6" id="D1B-vw-INS"/>
+                            <constraint firstItem="q6H-VH-9nM" firstAttribute="top" secondItem="FQa-Z0-uVD" secondAttribute="top" constant="25" id="DTH-IC-LUO"/>
                             <constraint firstItem="2jb-Ya-L28" firstAttribute="centerX" secondItem="RQ1-r8-vxg" secondAttribute="centerX" constant="-60" id="HIZ-ef-MJr"/>
                             <constraint firstItem="96n-Hq-lVb" firstAttribute="centerY" secondItem="2jb-Ya-L28" secondAttribute="centerY" id="Ov0-1w-t4P"/>
                             <constraint firstItem="dac-sl-ftc" firstAttribute="centerX" secondItem="RQ1-r8-vxg" secondAttribute="centerX" id="Xmi-tA-sA0"/>
-                            <constraint firstItem="Ys1-Bg-fh9" firstAttribute="leading" secondItem="FQa-Z0-uVD" secondAttribute="leading" constant="40" id="ZB7-pk-r7S"/>
+                            <constraint firstItem="Ys1-Bg-fh9" firstAttribute="leading" secondItem="FQa-Z0-uVD" secondAttribute="leading" constant="30" id="ZB7-pk-r7S"/>
                             <constraint firstItem="Ys1-Bg-fh9" firstAttribute="top" secondItem="FQa-Z0-uVD" secondAttribute="top" constant="25" id="cAn-dh-z3n"/>
                             <constraint firstItem="96n-Hq-lVb" firstAttribute="centerX" secondItem="RQ1-r8-vxg" secondAttribute="centerX" constant="60" id="pZS-MT-r1c"/>
                             <constraint firstItem="2jb-Ya-L28" firstAttribute="top" secondItem="dac-sl-ftc" secondAttribute="bottom" constant="120" id="wW2-tg-eun"/>
@@ -344,6 +347,9 @@
         </systemColor>
         <systemColor name="systemGray3Color">
             <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

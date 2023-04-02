@@ -64,7 +64,6 @@ final class TrainViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         countLabel.text = "0"
-        countLabel.layer.cornerRadius = 10
         configureQuestion()
         configureButtonsTwoScreen()
     }
@@ -98,8 +97,11 @@ final class TrainViewController: UIViewController {
         buttonBack.layer.shadowColor = UIColor.darkGray.cgColor
         buttonBack.layer.shadowOffset = CGSize(width: 0, height: 2)
         buttonBack.layer.shadowOpacity = 0.3
-        buttonBack.layer.cornerRadius = 10
+        buttonBack.layer.cornerRadius = 6
         buttonBack.layer.shadowRadius = 2
+        
+        countLabel.clipsToBounds = true
+        countLabel.layer.cornerRadius = 6
         
         let isRightButton = Bool.random()
         var randomAnswer: Int
