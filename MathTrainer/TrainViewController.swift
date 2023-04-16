@@ -11,7 +11,7 @@ final class TrainViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
-    @IBOutlet weak var buttonBack: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
     
@@ -65,7 +65,10 @@ final class TrainViewController: UIViewController {
     override func viewDidLoad() {
         countLabel.text = "0"
         configureQuestion()
-        configureButtonsTwoScreen()
+        configureLeftAndRightButtons()
+        addShadowForLeftAndRightButtons()
+        configureBackButton()
+        configureCountLabel()
     }
     
     // MARK: - IBActions
@@ -80,28 +83,31 @@ final class TrainViewController: UIViewController {
     }
     
     // MARK: - Methods
-    private func configureButtonsTwoScreen() {
-        let buttonsArray = [leftButton, rightButton]
-        
-        buttonsArray.forEach { button in
-            button?.backgroundColor = .systemYellow
-        }
-        // Add shadow
-        buttonsArray.forEach { button in
+    private func addShadowForLeftAndRightButtons() {
+        [leftButton, rightButton].forEach { button in
             button?.layer.shadowColor = UIColor.darkGray.cgColor
             button?.layer.shadowOffset = CGSize(width: 0, height: 2)
             button?.layer.shadowOpacity = 0.4
             button?.layer.shadowRadius = 3
         }
+    }
+    
+    private func configureBackButton() {
+        // add color
+        backButton.layer.shadowColor = UIColor.darkGray.cgColor
         
-        buttonBack.layer.shadowColor = UIColor.darkGray.cgColor
-        buttonBack.layer.shadowOffset = CGSize(width: 0, height: 2)
-        buttonBack.layer.shadowOpacity = 0.3
-        buttonBack.layer.cornerRadius = 6
-        buttonBack.layer.shadowRadius = 2
-        
-        countLabel.clipsToBounds = true
-        countLabel.layer.cornerRadius = 6
+        // add shadow
+        backButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        backButton.layer.shadowOpacity = 0.3
+        backButton.layer.cornerRadius = 6
+        backButton.layer.shadowRadius = 2
+    }
+    
+    private func configureLeftAndRightButtons() {
+        // add color for left and right buttons
+        let defaultColor: UIColor = .systemYellow
+        leftButton.backgroundColor = defaultColor
+        rightButton.backgroundColor = defaultColor
         
         let isRightButton = Bool.random()
         var randomAnswer: Int
@@ -129,19 +135,24 @@ final class TrainViewController: UIViewController {
         questionLabel.text = question
     }
     
+    private func configureCountLabel() {
+        countLabel.clipsToBounds = true
+        countLabel.layer.cornerRadius = 6
+    }
+    
     private func check(answer: String, for button: UIButton) {
         let isRightAnswer = Int(answer) == self.answer
         
-        button.backgroundColor = isRightAnswer ? .systemGreen : .systemRed
+        button.backgroundColor = isRightAnswer ? .green : .red
         
         if isRightAnswer {
-            let isSecondAttempt = rightButton.backgroundColor == .systemRed ||
-            leftButton.backgroundColor == .systemRed
+            let isSecondAttempt = rightButton.backgroundColor == .red ||
+            leftButton.backgroundColor == .red
             count += isSecondAttempt ? 0 : 1
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
                 self?.configureQuestion()
-                self?.configureButtonsTwoScreen()
+                self?.configureLeftAndRightButtons()
             }
         }
     }

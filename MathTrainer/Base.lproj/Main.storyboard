@@ -325,7 +325,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="5UK-7T-FoG"/>
                     <connections>
-                        <outlet property="buttonBack" destination="Ys1-Bg-fh9" id="XRM-PY-ymm"/>
+                        <outlet property="backButton" destination="Ys1-Bg-fh9" id="6d9-Vk-hy0"/>
                         <outlet property="countLabel" destination="q6H-VH-9nM" id="gSb-QQ-YqK"/>
                         <outlet property="leftButton" destination="2jb-Ya-L28" id="UHX-oc-0SJ"/>
                         <outlet property="questionLabel" destination="dac-sl-ftc" id="Fhz-Ok-7ad"/>
